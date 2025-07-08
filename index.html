@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Ultra Birthday!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
+        
+        :root {
+            --primary-color: #ff6b9e;
+            --secondary-color: #6b46ff;
+            --accent-color: #ffcc5e;
+            --light-color: #fffaf5;
+            --dark-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: #fff5f7;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle, #ffebee 1px, transparent 1px);
+            background-size: 20px 20px;
+            transition: all 0.5s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "✨";
+            position: absolute;
+            right: -30px;
+            top: -15px;
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+        }
+        
+        .birthday-card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            border: 5px dashed var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .birthday-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            z-index: -1;
+            border-radius: 30px;
+            opacity: 0.3;
+        }
+        
+        .birthday-card:hover {
+            transform: rotate(-1deg) scale(1.01);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .card-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 25px;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            background: #ffebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .card-image::after {
+            content: "🎀";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            z-index: 2;
+            transform: rotate(20deg);
+        }
+        
+        .card-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+        }
+        
+        .message {
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 15px;
+            background: #fff9f9;
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .message::before {
+            content: "“";
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            line-height: 1;
+            opacity: 0.3;
+        }
+        
+        .interactive-element {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: block;
+            margin: 25px auto;
+            transition: all 0.3s ease;
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-element:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .interactive-element:active {
+            transform: translateY(1px);
+        }
+        
+        .interactive-element::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 50px;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+
+        .surprise-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #fff0f5;
+  padding: 20px;
+}
+
+/* Cake Base */
+.cake {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  background: #d2691e;
+  border-radius: 10px;
+  box-shadow: inset 0 -10px 0 #8b4513;
+}
+
+/* Cake Layer */
+.cake::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  width: 150px;
+  height: 40px;
+  background: pink;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 -5px 0 #ff69b4;
+}
+
+/* Candle */
+.candle {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 30px;
+  background: #4682b4;
+  border-radius: 2px;
+}
+
+/* Flame */
+.flame {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: gold;
+  border-radius: 50%;
+  animation: flicker 0.5s infinite alternate;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50%) scale(1.3);
+    opacity: 0.8;
+  }
+}
+        
+        .interactive-element:hover::after {
+            left: 120%;
+        }
+        
+        .sticker-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            min-height: 300px;
+            border: 3px dashed var(--accent-color);
+        }
+        
+        .sticker {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: grab;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            padding: 5px;
+        }
+        
+        .sticker:hover {
+            transform: rotate(5deg) scale(1.1);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .sticker img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        .sticker-emoji {
+            position: absolute;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+        
+        .sticker-1 { top: -10px; right: -10px; }
+        .sticker-2 { bottom: -5px; left: -5px; }
+        .sticker-3 { top: 0; left: 50%; transform: translateX(-50%) rotate(20deg); }
+        
+        .add-sticker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .add-sticker input {
+            display: none;
+        }
+        
+        .add-sticker label {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .add-sticker label:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .surprise-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .surprise-item {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 15px;
+            width: 180px;
+            text-align: center;
+            margin: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .surprise-item:hover {
+            transform: translateY(-10px) rotate(3deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .surprise-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .surprise-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .surprise-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            opacity: 0;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .floating-stickers {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            font-size: 2rem;
+            animation: float-up 5s linear infinite;
+        }
+        
+        @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 5px solid var(--accent-color);
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        /* Bubble animations */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .birthday-card {
+                padding: 20px;
+            }
+            
+            .card-image {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .surprise-item {
+                width: 140px;
+            }
+            
+            .sticker {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="birthday-bubbles"></div>
+    
+    <!-- Floating stickers in background -->
+    <div id="floating-stickers">
+        <div class="floating-stickers" style="left: 10%; animation-delay: 0s;">🎈</div>
+        <div class="floating-stickers" style="left: 30%; animation-delay: 1s;">🎁</div>
+        <div class="floating-stickers" style="left: 50%; animation-delay: 2s;">✨</div>
+        <div class="floating-stickers" style="left: 70%; animation-delay: 3s;">🍰</div>
+        <div class="floating-stickers" style="left: 90%; animation-delay: 4s;">❤️</div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Happy Birthday!</h1>
+            <h2>Untuk Kamu Yang Spesial 💖</h2>
+            
+            <div class="bouncing-text">
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate;">S</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.1s;">E</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.2s;">L</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.3s;">A</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.4s;">M</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.5s;">A</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.6s;">T</span>
+                <span style="display: inline-block; animation: bounce 0.5s ease infinite alternate 0.7s;">!</span>
+            </div>
+        </header>
+        
+        <div class="birthday-card">
+            <div class="card-header">
+                <div class="card-image">
+                    <img src="img/WhatsApp Image 2025-07-09 at 00.26.08.jpeg" alt="Karakter kartun lucu dengan topi ulang tahun sedang tersenyum lebar" id="mainPhoto" />
+                    <div class="sticker-emoji sticker-1">🎂</div>
+                    <div class="sticker-emoji sticker-2">🥳</div>
+                </div>
+                <h3 class="card-title">Special Person!</h3>
+            </div>
+            
+            <p class="message">
+                HAPPY BIRTHDAY! 🎉 Hari ini adalah hari spesial karena dunia mendapat hadiah terbaik - yaitu kamu! Semoga hari ini penuh dengan kebahagiaan, tertawa, dan semua hal baik yang pantas kamu dapatkan...
+            </p>
+            
+            <button class="interactive-element" id="showMessage">
+                Klik untuk Pesan Rahasia ✨
+            </button>
+            
+            <div id="secretMessage" class="hidden">
+                <p class="message">Tahu ngga sih... Setiap kali ngobrol sama kamu, hari-hariku jadi lebih cerah. Aku punya sesuatu yang pengen aku sampaikan...</p>
+                <button class="interactive-element" id="showMore">Terusin Dong!</button>
+            </div>
+            
+            <div id="moreMessage" class="hidden">
+                <p class="message">Aku suka banget sama kamu! Cara kamu tertawa, cara kamu mikir, bahkan cara kamu bereaksi waktu kaget.</p>
+                
+                <div class="sticker-wall" id="stickerWall">
+                    
+                    
+                    
+            
+
+                    <div class="sticker-wall" id="stickerWall">
+                    <div class="sticker">
+                        <img src="img/WhatsApp Image 2025-07-09 at 00.26.07 (1).jpeg" alt="Stiker wajah tersipu malu dengan hati merah" />
+                        <div class="sticker-emoji sticker-3">😊</div>
+                    </div>
+                    
+                    
+                     <div class="sticker">
+                        <img src="img/WhatsApp Image 2025-07-09 at 00.26.09.jpeg" alt="Stiker karakter kartun sedang melambai" />
+                    </div>
+                     <div class="sticker">
+                        <img src="img/WhatsApp Image 2025-07-09 at 00.26.07.jpeg" alt="Stiker karakter kartun sedang melambai" />
+                    </div>
+                     <div class="sticker">
+                        <img src="img/WhatsApp Image 2025-07-09 at 00.26.08 (1).jpeg" alt="Stiker karakter kartun sedang melambai" />
+                    </div>
+                     <div class="sticker">
+                        <img src="img/WhatsApp Image 2025-07-09 at 00.26.08.jpeg" alt="Stiker karakter kartun sedang melambai" />
+                    </div>
+                </div>
+                </div>
+                
+
+                
+
+                
+                
+                
+                
+                <div class="surprise-container">
+                    
+                   <div class="surprise-container">
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+<hr>
+<hr>
+<hr>
+<hr>
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <footer>
+        <p>Made with 💖 Especially For You</p>
+        <p>© Birthday Special 2023</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const showMessageBtn = document.getElementById('showMessage');
+            const secretMessage = document.getElementById('secretMessage');
+            const showMoreBtn = document.getElementById('showMore');
+            const moreMessage = document.getElementById('moreMessage');
+            const surprise1 = document.getElementById('surprise1');
+            const surprise2 = document.getElementById('surprise2');
+            const surprise3 = document.getElementById('surprise3');
+            const loveModal = document.getElementById('loveModal');
+            const finalModal = document.getElementById('finalModal');
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            const closeFinal = document.getElementById('closeFinal');
+            const closeModalElems = document.querySelectorAll('.close-modal');
+            const stickerWall = document.getElementById('stickerWall');
+            const stickerUpload = document.getElementById('stickerUpload');
+            const mainPhoto = document.getElementById('mainPhoto');
+            
+            // Create floating bubbles
+            createBubbles(20);
+            
+            // Create initial confetti
+            setTimeout(createConfetti, 1000);
+            setInterval(createFloatingSticker, 3000);
+            
+            function createBubbles(count) {
+                const container = document.getElementById('birthday-bubbles');
+                
+                for (let i = 0; i < count; i++) {
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    
+                    const size = Math.random() * 100 + 50;
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+                    const delay = Math.random() * 5;
+                    const duration = Math.random() * 10 + 10;
+                    
+                    bubble.style.width = `${size}px`;
+                    bubble.style.height = `${size}px`;
+                    bubble.style.left = `${posX}%`;
+                    bubble.style.top = `${posY}%`;
+                    bubble.style.opacity = Math.random() * 0.2 + 0.1;
+                    bubble.style.animation = `float-up ${duration}s linear ${delay}s infinite`;
+                    
+                    container.appendChild(bubble);
+                }
+            }
+            
+            function createFloatingSticker() {
+                const stickers = ['🎈', '🎁', '✨', '🎀', '🎊', '💝', '🎂', '💖'];
+                const sticker = stickers[Math.floor(Math.random() * stickers.length)];
+                
+                const floatingSticker = document.createElement('div');
+                floatingSticker.className = 'floating-stickers';
+                floatingSticker.style.left = `${Math.random() * 100}%`;
+                floatingSticker.style.animationDelay = `${Math.random() * 5}s`;
+                floatingSticker.textContent = sticker;
+                
+                document.getElementById('floating-stickers').appendChild(floatingSticker);
+                
+                setTimeout(() => {
+                    floatingSticker.remove();
+                }, 5000);
+            }
+            
+            // Interactive elements
+            showMessageBtn.addEventListener('click', function() {
+                secretMessage.classList.remove('hidden');
+                showMessageBtn.classList.add('hidden');
+                createConfetti();
+                animateButtonPress(this);
+            });
+            
+            showMoreBtn.addEventListener('click', function() {
+                moreMessage.classList.remove('hidden');
+                showMoreBtn.classList.add('hidden');
+                createConfetti();
+                animateButtonPress(this);
+                
+                // Animate sticker wall appearance
+                const stickers = document.querySelectorAll('.sticker');
+                stickers.forEach((sticker, index) => {
+                    setTimeout(() => {
+                        sticker.style.transform = 'scale(1)';
+                        sticker.style.opacity = '1';
+                    }, index * 200);
+                });
+            });
+            
+            // Surprise elements
+            surprise1.addEventListener('click', function() {
+                openModal('loveModal');
+                createConfetti(100);
+                animateButtonPress(this);
+            });
+            
+            surprise2.addEventListener('click', function() {
+                // Play a birthday song
+                const audio = new Audio('');
+                audio.play();
+                
+                this.querySelector('.surprise-icon').textContent = '🎵';
+                this.querySelector('p').textContent = 'Playing our song!';
+                
+                setTimeout(() => {
+                    this.querySelector('.surprise-icon').textContent = '🎶';
+                    this.querySelector('p').textContent = 'Lagu Kita';
+                }, 3000);
+                
+                animateButtonPress(this);
+            });
+            
+            surprise3.addEventListener('click', function() {
+                animateButtonPress(this);
+                
+                this.querySelector('.surprise-icon').textContent = '💝';
+                this.querySelector('p').textContent = 'Check your phone! 😘';
+                
+                // Simulate sending a gift
+                setTimeout(() => {
+                    openModal('finalModal');
+                }, 1000);
+            });
+            
+            // Modal controls
+            yesButton.addEventListener('click', function() {
+                loveModal.style.display = 'none';
+                setTimeout(() => {
+                    openModal('finalModal');
+                    createConfetti(200);
+                }, 300);
+                animateButtonPress(this);
+            });
+            
+            noButton.addEventListener('click', function() {
+                noButton.textContent = 'Coba Klik Lagi 😊';
+                animateButtonPress(this);
+                
+                // Move the button randomly
+                const modalContent = loveModal.querySelector('.modal-content');
+                const modalRect = modalContent.getBoundingClientRect();
+                const buttonRect = noButton.getBoundingClientRect();
+                
+                const maxX = modalRect.width - buttonRect.width - 20;
+                const maxY = modalRect.height - buttonRect.height - 20;
+                
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+                
+                noButton.style.position = 'absolute';
+                noButton.style.left = `${randomX}px`;
+                noButton.style.top = `${randomY}px`;
+                noButton.style.transform = 'none';
+            });
+            
+            closeFinal.addEventListener('click', function() {
+                finalModal.style.display = 'none';
+                animateButtonPress(this);
+            });
+            
+            closeModalElems.forEach(closeBtn => {
+                closeBtn.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Sticker upload functionality
+            stickerUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const newSticker = document.createElement('div');
+                        newSticker.className = 'sticker';
+                        newSticker.innerHTML = `
+                            <img src="${event.target.result}" alt="Foto stiker unggahanmu" />
+                            <div class="sticker-emoji" style="bottom: -5px; right: -5px;">🌟</div>
+                        `;
+                        
+                        // Set initial small size for animation
+                        newSticker.style.transform = 'scale(0.1)';
+                        newSticker.style.opacity = '0';
+                        
+                        stickerWall.appendChild(newSticker);
+                        
+                        // Animate sticker appearance
+                        setTimeout(() => {
+                            newSticker.style.transform = 'scale(1)';
+                            newSticker.style.opacity = '1';
+                        }, 100);
+                        
+                        // Make stickers draggable
+                        makeDraggable(newSticker);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Make all initial stickers draggable
+            document.querySelectorAll('.sticker').forEach(sticker => {
+                makeDraggable(sticker);
+            });
+            
+            // Main photo click to change
+            mainPhoto.addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = e => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = event => {
+                            mainPhoto.src = event.target.result;
+                            createConfetti();
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+                input.click();
+            });
+            
+            // Helper functions
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = 'flex';
+            }
+            
+            function animateButtonPress(button) {
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 200);
+            }
+            
+            function makeDraggable(element) {
+                let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                
+                element.onmousedown = dragMouseDown;
+                
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    
+                    // Get initial mouse position
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    
+                    document.onmouseup = closeDragElement;
+                    document.onmousemove = elementDrag;
+                    
+                    // Bring to front
+                    element.style.zIndex = '100';
+                }
+                
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    
+                    // Calculate new position
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    
+                    // Set new position
+                    element.style.top = (element.offsetTop - pos2) + "px";
+                    element.style.left = (element.offsetLeft - pos1) + "px";
+                }
+                
+                function closeDragElement() {
+                    // Stop moving when mouse button is released
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+            
+            function createConfetti(count = 50) {
+                const colors = ['#ff6b9e', '#6b46ff', '#ffcc5e', '#4CAF50', '#2196F3', '#FF9800'];
+                
+                for (let i = 0; i < count; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const width = Math.random() * 10 + 5;
+                    const height = Math.random() * 10 + 5;
+                    const shape = Math.random() > 0.5 ? '50%' : '0';
+                    
+                    confetti.style.backgroundColor = color;
+                    confetti.style.width = `${width}px`;
+                    confetti.style.height = `${height}px`;
+                    confetti.style.borderRadius = shape;
+                    
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.top = `${-50}px`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    const animationDuration = Math.random() * 3 + 2;
+                    
+                    confetti.style.transition = `all ${animationDuration}s ease-out`;
+                    confetti.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        confetti.style.transform = `rotate(${Math.random() * 360}deg) translate(${Math.random() * 100 - 50}px, ${window.innerHeight}px)`;
+                        confetti.style.opacity = '0';
+                    }, 10);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, animationDuration * 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
